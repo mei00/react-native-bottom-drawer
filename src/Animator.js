@@ -97,8 +97,8 @@ const styles = {
     }
   },
   shadow: shadow => {
-    return shadow == true && {
-      shadowColor: '#CECDCD',
+    return shadow && {
+      shadowColor: typeof shadow === "string" ? shadow: "#CECDCD",
       shadowRadius: 3,
       shadowOpacity: 5,
     }
