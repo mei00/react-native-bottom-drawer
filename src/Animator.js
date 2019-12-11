@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { 
   PanResponder,
   Animated,
+  Platform,
   Dimensions,
   StyleSheet
 } from 'react-native';
@@ -92,15 +93,24 @@ const styles = {
   }),
   roundedEdges: rounded => {
     return rounded == true && {
-      borderTopLeftRadius: 10,
-      borderTopRightRadius: 10,
+      borderTopLeftRadius: 15,
+      borderTopRightRadius: 15,
     }
   },
   shadow: shadow => {
-    return shadow && {
-      shadowColor: typeof shadow === "string" ? shadow: "#CECDCD",
-      shadowRadius: 3,
-      shadowOpacity: 5,
-    }
+    return shadow && Platform.select({
+      ios: {
+        shadowColor: typeof shadow === "string" ? shadow: "#CECDCD",
+        shadowOffset: {
+          width: 0,
+          height: -2,
+        },
+        shadowRadius: 3,
+        shadowOpacity: 5,
+      },
+      android: {
+        elevation: 20
+      }
+    });
   },
 }
