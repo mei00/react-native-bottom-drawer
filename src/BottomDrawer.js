@@ -45,9 +45,12 @@ export default class BottomDrawer extends Component{
     roundedEdges: PropTypes.bool,
 
     /**
-     * Set to true to give the drawer a shadow.
+     * Set to false or color code to give the drawer a shadow.
      */
-    shadow: PropTypes.bool,
+    shadow: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
 
     /**
      * A callback function triggered when the drawer swiped into up position
