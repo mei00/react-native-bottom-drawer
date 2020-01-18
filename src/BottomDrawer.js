@@ -53,6 +53,11 @@ export default class BottomDrawer extends Component{
     ]),
 
     /**
+     * Set to true to set drawer position up or down.
+     */
+    expanded: PropTypes.bool,
+
+    /**
      * A callback function triggered when the drawer swiped into up position
      */
     onExpanded: PropTypes.func,
@@ -103,6 +108,7 @@ export default class BottomDrawer extends Component{
         downPosition = {this.DOWN_POSITION}
         roundedEdges = {this.props.roundedEdges}
         shadow = {this.props.shadow}
+        expanded = {this.props.expanded}
         containerHeight = {this.props.containerHeight}
         backgroundColor = {this.props.backgroundColor}
         onExpanded = {() => this.props.onExpanded()}
