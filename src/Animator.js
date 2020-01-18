@@ -40,6 +40,16 @@ export default class Animator extends Component{
       </Animated.View>
     )
   }
+  
+  componentDidUpdate(prevProps): void {
+    if (prevProps.expanded !== this.props.expanded) {
+      if (!this.props.expanded) {
+        this._transitionTo(this.props.downPosition, () => {});
+      } else {
+        this._transitionTo(this.props.upPosition, () => {});
+      }
+    }
+  }
 
   _handlePanResponderMove = (e, gesture) => {
     if (this._swipeInBounds(gesture)) {
