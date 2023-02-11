@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { 
+import {
   PanResponder,
   Animated,
   Platform,
@@ -13,7 +13,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 export default class Animator extends Component{
   constructor(props){
     super(props);
-    
+
     this.position = new Animated.ValueXY(this.props.currentPosition);
 
     this._panResponder = PanResponder.create({
@@ -25,7 +25,7 @@ export default class Animator extends Component{
 
   render() {
     return (
-      <Animated.View 
+      <Animated.View
         style={[
           {...this.position.getLayout(), left: 0},
           StyleSheet.flatten([
@@ -40,7 +40,7 @@ export default class Animator extends Component{
       </Animated.View>
     )
   }
-  
+
   componentDidUpdate(prevProps): void {
     if (prevProps.expanded !== this.props.expanded) {
       if (!this.props.expanded) {
@@ -80,16 +80,18 @@ export default class Animator extends Component{
 
   _transitionTo(position, callback) {
     Animated.spring(this.position, {
-      toValue: position
+      toValue: position,
+      useNativeDriver: false,
     }).start();
-    
+
     this.props.setCurrentPosition(position);
     callback();
   }
 
   _resetPosition() {
     Animated.spring(this.position, {
-      toValue: this.props.currentPosition
+      toValue: this.props.currentPosition,
+      useNativeDriver: false,
     }).start();
   }
 }

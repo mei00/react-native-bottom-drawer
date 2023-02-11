@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { 
+import {
   View,
   Dimensions,
 } from 'react-native';
@@ -12,13 +12,13 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 export default class BottomDrawer extends Component{
   static propTypes = {
     /**
-     * Height of the drawer. 
+     * Height of the drawer.
      */
     containerHeight: PropTypes.number.isRequired,
 
     /**
      * The amount of offset to apply to the drawer's position.
-     * If the app uses a header and tab navigation, offset should equal 
+     * If the app uses a header and tab navigation, offset should equal
      * the sum of those two components' heights.
      */
     offset: PropTypes.number,
@@ -29,7 +29,7 @@ export default class BottomDrawer extends Component{
     startUp: PropTypes.bool,
 
     /**
-     * How much the drawer's down display falls beneath the up display. 
+     * How much the drawer's down display falls beneath the up display.
      * Ex: if set to 20, the down display will be 20 points underneath the up display.
      */
     downDisplay: PropTypes.number,
@@ -98,7 +98,7 @@ export default class BottomDrawer extends Component{
     this.state = { currentPosition: this.props.startUp ? this.UP_POSITION : this.DOWN_POSITION };
   }
 
-  render() {   
+  render() {
     return (
       <Animator
         currentPosition = {this.state.currentPosition}
@@ -127,13 +127,13 @@ export default class BottomDrawer extends Component{
 
   _calculateUpPosition(screenHeight, containerHeight, offset) {
     return {
-      x: 0, 
-      y: screenHeight - (containerHeight + offset) 
+      x: 0,
+      y: screenHeight - (containerHeight + offset)
     }
   }
 
   _calculateDownPosition(upPosition, downDisplay) {
-    return { 
+    return {
       x: 0,
       y: upPosition.y + downDisplay
     };
