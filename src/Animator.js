@@ -21,7 +21,11 @@ export default class Animator extends Component{
       onPanResponderMove: this._handlePanResponderMove,
       onPanResponderRelease: this._handlePanResponderRelease,
       onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
-        return Math.abs(gestureState.dy) > 5;
+        if (this.props.captureOffset) {
+          return Math.abs(gestureState.dy) > this.props.captureOffset;
+        } else {
+          return true;
+        }
       },
     });
   }

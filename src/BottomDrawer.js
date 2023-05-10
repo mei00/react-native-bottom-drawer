@@ -65,7 +65,14 @@ export default class BottomDrawer extends Component{
     /**
      * A callback function triggered when the drawer swiped into down position
      */
-    onCollapsed: PropTypes.func
+    onCollapsed: PropTypes.func,
+
+    /**
+     * The amount of offset to apply to the drawer's position.
+     * If the app uses a header and tab navigation, offset should equal
+     * the sum of those two components' heights.
+     */
+    captureOffset: PropTypes.number
   }
 
   static defaultProps = {
@@ -113,6 +120,7 @@ export default class BottomDrawer extends Component{
         backgroundColor = {this.props.backgroundColor}
         onExpanded = {() => this.props.onExpanded()}
         onCollapsed = {() => this.props.onCollapsed()}
+        captureOffset={this.props.captureOffset}
       >
         {this.props.children}
 
