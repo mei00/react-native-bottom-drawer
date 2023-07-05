@@ -72,7 +72,8 @@ export default class BottomDrawer extends Component{
      * If the app uses a header and tab navigation, offset should equal
      * the sum of those two components' heights.
      */
-    captureOffset: PropTypes.number
+    captureOffset: PropTypes.number,
+    isEnabled: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -121,6 +122,7 @@ export default class BottomDrawer extends Component{
         onExpanded = {() => this.props.onExpanded()}
         onCollapsed = {() => this.props.onCollapsed()}
         captureOffset={this.props.captureOffset}
+        isEnabled={this.props.isEnabled}
       >
         {this.props.children}
 

@@ -1,31 +1,56 @@
 {
-  "name": "rn-bottom-drawer",
-  "version": "1.4.3",
-  "description": "a bottom drawer component for react native",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
+  "_from": "git+https://github.com/mei00/react-native-bottom-drawer.git",
+  "_id": "rn-bottom-drawer@1.4.3",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/rn-bottom-drawer",
+  "_phantomChildren": {},
+  "_requested": {
     "type": "git",
-    "url": "git+https://github.com/jacklein/rn-bottom-drawer.git"
+    "raw": "git+https://github.com/mei00/react-native-bottom-drawer.git",
+    "rawSpec": "git+https://github.com/mei00/react-native-bottom-drawer.git",
+    "saveSpec": "git+https://github.com/mei00/react-native-bottom-drawer.git",
+    "fetchSpec": "https://github.com/mei00/react-native-bottom-drawer.git",
+    "gitCommittish": null
   },
-  "keywords": [
-    "react-native",
-    "drawer"
+  "_requiredBy": [
+    "#USER",
+    "/"
   ],
-  "author": "Jack K",
-  "license": "ISC",
+  "_resolved": "git+https://github.com/mei00/react-native-bottom-drawer.git#140f45819520a1b66a52035e4d8fac13d6998fec",
+  "_spec": "git+https://github.com/mei00/react-native-bottom-drawer.git",
+  "_where": "D:\\web\\dom-krugom",
+  "author": {
+    "name": "Jack K"
+  },
   "bugs": {
     "url": "https://github.com/jacklein/rn-bottom-drawer/issues"
   },
-  "homepage": "https://github.com/jacklein/rn-bottom-drawer#readme",
+  "bundleDependencies": false,
   "dependencies": {
     "prop-types": "^15.6.2"
   },
+  "deprecated": false,
+  "description": "a bottom drawer component for react native",
   "devDependencies": {
     "metro-react-native-babel-preset": "^0.51.0",
     "react": "^16.6.3",
     "react-native": "^0.57.8"
-  }
+  },
+  "homepage": "https://github.com/jacklein/rn-bottom-drawer#readme",
+  "keywords": [
+    "react-native",
+    "drawer"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "rn-bottom-drawer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacklein/rn-bottom-drawer.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.4.3"
 }
