@@ -17,7 +17,10 @@ export default class Animator extends Component{
     this.position = new Animated.ValueXY(this.props.currentPosition);
 
     this._panResponder = PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
+      onStartShouldSetPanResponder: (evt) => {
+        const touchY = evt.nativeEvent.pageY;
+        return touchY <= this.props.draggableAreaHeight;
+      },
       onPanResponderMove: this.props.isEnabled ? this._handlePanResponderMove : null,
       onPanResponderRelease: this.props.isEnabled ? this._handlePanResponderRelease : null,
       onMoveShouldSetPanResponderCapture: (evt, gestureState) => {

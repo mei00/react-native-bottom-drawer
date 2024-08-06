@@ -24,6 +24,16 @@ export default class BottomDrawer extends Component{
     offset: PropTypes.number,
 
     /**
+     * Draggable area height
+     */
+    draggableAreaHeight: PropTypes.number,
+
+    /**
+     * Custom toggle threshold
+     */
+    toggleThreshold: PropTypes.number,
+
+    /**
      * Set to true to have the drawer start in up position.
      */
     startUp: PropTypes.bool,
@@ -93,7 +103,7 @@ export default class BottomDrawer extends Component{
      * TOGGLE_THRESHOLD is how much the user has to swipe the drawer
      * before its position changes between up / down.
      */
-    this.TOGGLE_THRESHOLD = this.props.containerHeight / 11;
+    this.TOGGLE_THRESHOLD = this.TOGGLE_THRESHOLD = this.props.toggleThreshold ? this.props.toggleThreshold : this.props.containerHeight / 11;
     this.DOWN_DISPLAY = this.props.downDisplay || this.props.containerHeight / 1.5;
 
     /**
@@ -123,6 +133,7 @@ export default class BottomDrawer extends Component{
         onCollapsed = {() => this.props.onCollapsed()}
         captureOffset={this.props.captureOffset}
         isEnabled={this.props.isEnabled}
+        draggableAreaHeigh={this.props.draggableAreaHeight}
       >
         {this.props.children}
 
